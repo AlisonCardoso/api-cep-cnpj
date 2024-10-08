@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ApiController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use  App\Livewire\BuscarCep;
@@ -20,6 +21,9 @@ Route::middleware('auth')->group(function () {
 });
 Route::get('/buscar-cep', BuscarCep::class)->name('buscar-cep');
 Route::get('/buscar-cnpj', BuscarCnpj::class)->name('buscar-cnpj');
+
+Route::get('/api-example',[ApiController::class])->name('api-example');
+//Route::get('/api-example',[ApiController::class,  'index'])->name('api-example');
 
 
 require __DIR__.'/auth.php';
